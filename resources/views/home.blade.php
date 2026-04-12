@@ -8,7 +8,11 @@
             A modern social platform built with Laravel and Tailwind CSS. Connect, share, and grow with a vibrant
             community.
         </p>
-        <p>Now Live on the Internet!</p>
+        <p
+            class="text-lg font-medium text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 px-4 py-2 rounded-lg shadow-md inline-block">
+            🚀 Now live on the internet
+        </p>
+
         <a href="#"
             class="inline-block bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-6 py-3 rounded-lg shadow hover:opacity-90 transition">
             Get Started
