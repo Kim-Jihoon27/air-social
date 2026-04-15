@@ -34,8 +34,21 @@ class AirSocialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validated the request
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+
+        
+        //Create Air_Post (No user for now , we'll add auth later)
+        AirSocial:create([
+            'message' => $validated['message'],
+        ]);
+
+        return redirect('/')->with('sucess', 'Air Post Created');
     }
+
+
 
     /**
      * Display the specified resource.
