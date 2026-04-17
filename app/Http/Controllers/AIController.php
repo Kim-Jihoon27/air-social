@@ -9,7 +9,7 @@ class AIController extends Controller
 {
     private function getApiKey()
     {
-        return env('GEMINI_API_KEY', '');
+        return config('ai.gemini_api_key', '');
     }
 
     public function improveWriting(Request $request)
