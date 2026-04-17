@@ -1,28 +1,13 @@
 <x-layout>
-    <x-slot:name>Register</x-slot:name>
+    <x-slot:name>Login</x-slot:name>
 
     <div class="flex justify-center">
         <div class="w-full max-w-md">
             <div class="bg-white/80 backdrop-blur-sm ring-1 ring-white/30 rounded-2xl shadow-sm p-8">
-                <h2 class="text-2xl font-bold text-gray-900 text-center mb-6">Create Account</h2>
+                <h2 class="text-2xl font-bold text-gray-900 text-center mb-6">Welcome Back</h2>
 
-                <form method="POST" action="{{ route('register') }}" class="space-y-5">
+                <form method="POST" action="{{ route('login') }}" class="space-y-5">
                     @csrf
-
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                        <input 
-                            type="text" 
-                            name="name" 
-                            id="name" 
-                            required
-                            class="w-full px-4 py-3 rounded-xl bg-gray-50 border-0 ring-1 ring-gray-200 focus:ring-2 focus:ring-pink-500 focus:bg-white transition"
-                            placeholder="Your name"
-                        >
-                        @error('name')
-                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                        @enderror
-                    </div>
 
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
@@ -46,26 +31,10 @@
                             name="password" 
                             id="password" 
                             required
-                            minlength="8"
                             class="w-full px-4 py-3 rounded-xl bg-gray-50 border-0 ring-1 ring-gray-200 focus:ring-2 focus:ring-pink-500 focus:bg-white transition"
-                            placeholder="Minimum 8 characters"
+                            placeholder="Your password"
                         >
                         @error('password')
-                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div>
-                        <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
-                        <input 
-                            type="password" 
-                            name="password_confirmation" 
-                            id="password_confirmation" 
-                            required
-                            class="w-full px-4 py-3 rounded-xl bg-gray-50 border-0 ring-1 ring-gray-200 focus:ring-2 focus:ring-pink-500 focus:bg-white transition"
-                            placeholder="Confirm your password"
-                        >
-                        @error('password_confirmation')
                             <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                         @enderror
                     </div>
@@ -74,13 +43,13 @@
                         type="submit"
                         class="w-full py-3 rounded-full bg-gradient-to-r from-pink-500 to-rose-600 text-white font-semibold shadow hover:opacity-90 transition"
                     >
-                        Sign Up
+                        Sign In
                     </button>
                 </form>
 
                 <p class="text-center text-sm text-gray-600 mt-6">
-                    Already have an account? 
-                    <a href="{{ route('login') }}" class="text-pink-600 font-medium hover:underline">Sign in</a>
+                    Don't have an account? 
+                    <a href="{{ route('register') }}" class="text-pink-600 font-medium hover:underline">Sign up</a>
                 </p>
             </div>
         </div>

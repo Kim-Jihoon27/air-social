@@ -9,9 +9,11 @@ class AirSocial extends Model
 {
     protected $fillable = [
         'message',
+        'user_id',
     ];
 
-    public function user(): BelongsTo{
+    public function user(): BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
 }

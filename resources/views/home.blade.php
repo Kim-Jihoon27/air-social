@@ -4,44 +4,28 @@
 <x-layout>
     <x-slot:name>Welcome</x-slot:name>
 
-    <!-- Hero Banner -->
-    <section class="mb-8">
-        <div class="relative overflow-hidden rounded-2xl">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-50 via-rose-50 to-white -z-10"></div>
-            <div class="relative px-6 py-10 sm:py-12 lg:py-14 lg:px-12">
-                <div class="mx-auto max-w-3xl text-center">
-                    <img src="/static/asset/air-social-logo.png" alt="Air Social" class="mx-auto w-20 h-20 object-contain mb-4">
-                    <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">Air Social</h1>
-                    <p class="mt-3 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                        A social platform that helps you connect with people who share your interests. Discover ideas, join conversations, and build meaningful connections.
-                    </p>
+    <!-- Hero -->
+    <section class="-mx-4 -mt-4 mb-8">
+        <div class="w-full min-h-[80vh] flex items-center justify-center py-16 lg:py-20">
+            <div class="w-full max-w-4xl px-8 lg:px-16 text-center">
+                <img src="/static/asset/air-social-logo.svg" alt="Air Social" class="mx-auto w-32 h-32 lg:w-40 lg:h-40 object-contain mb-6">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">Air Social</h1>
+                <p class="mt-4 sm:mt-6 text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    A social platform that helps you connect with people who share your interests. Discover ideas, join conversations, and build meaningful connections.
+                </p>
 
-                    <div class="mt-6 flex justify-center gap-4">
-                        <a href="#" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-rose-600 text-white font-semibold shadow-lg hover:scale-105 transform transition">Get Started</a>
-                        <a href="#" class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-pink-200 text-pink-600 font-medium hover:bg-pink-50 transition">Learn More</a>
-                    </div>
+                <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+                    <a href="{{ route('register') }}" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-rose-600 text-white font-bold text-lg hover:opacity-90 transition">Get Started</a>
+                    <a href="{{ route('newsfeed') }}" class="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-pink-300 text-pink-600 font-semibold text-lg hover:bg-white/50 transition">Explore as Guest</a>
+                </div>
 
-                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-xs text-gray-500">
-                        <span class="px-3 py-1 rounded-full bg-white/60 backdrop-blur-sm">Discover Communities</span>
-                        <span class="px-3 py-1 rounded-full bg-white/60 backdrop-blur-sm">Real Conversations</span>
-                        <span class="px-3 py-1 rounded-full bg-white/60 backdrop-blur-sm">Privacy First</span>
-                    </div>
+                <div class="mt-10 sm:mt-12 flex flex-wrap justify-center gap-4 sm:gap-5">
+                    <span class="px-4 py-2 rounded-full bg-white/70 backdrop-blur-sm text-sm font-medium text-gray-700">Discover Communities</span>
+                    <span class="px-4 py-2 rounded-full bg-white/70 backdrop-blur-sm text-sm font-medium text-gray-700">Real Conversations</span>
+                    <span class="px-4 py-2 rounded-full bg-white/70 backdrop-blur-sm text-sm font-medium text-gray-700">Privacy First</span>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Feed -->
-    <section class="space-y-6">
-        @forelse($air_post as $post)
-            <x-post :post="$post" />
-        @empty
-            <div class="text-center text-gray-500 py-16 rounded-2xl bg-gradient-to-b from-white to-pink-50 border border-dashed border-gray-200">
-                <p class="text-2xl font-semibold text-gray-900 mb-2">No posts yet</p>
-                <p class="text-sm text-gray-400 mb-6">Be the first to share something!</p>
-                <a href="#" class="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-rose-600 text-white font-medium shadow hover:opacity-95 transition">Create an account</a>
-            </div>
-        @endforelse
     </section>
 </x-layout>
 
